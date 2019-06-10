@@ -17,6 +17,9 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "globals": {
+    "process": true
+  },
   "rules": {
     "no-console": "warn",
     "indent": [
