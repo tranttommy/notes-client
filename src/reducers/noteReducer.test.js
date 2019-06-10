@@ -1,5 +1,4 @@
 import noteReducer from './noteReducer';
-import { addNote } from '../components/actions/noteActions';
 
 describe('noteReducer', () => {
   it('returns initial state on init action', () => {
@@ -7,12 +6,15 @@ describe('noteReducer', () => {
   });
 
   it('returns a new state with note on addNote action', () => {
-    const note = {
-      title: 'My Cool Title',
-      body: 'My Coool Body'
+    const action = {
+      type: 'ADD_NOTE',
+      payload: {
+        title: 'My Cool Title',
+        body: 'My Coool Body'
+      }
     };
 
-    expect(noteReducer(undefined, addNote(note))).toEqual([
+    expect(noteReducer(undefined, action)).toEqual([
       {
         title: 'My Cool Title',
         body: 'My Coool Body'

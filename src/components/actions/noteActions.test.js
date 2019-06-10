@@ -7,10 +7,7 @@ describe('noteActions', () => {
       body: 'My Cool Body'
     })).toEqual({
       type: 'ADD_NOTE',
-      payload: {
-        title: 'My Cool Title',
-        body: 'My Cool Body'
-      }
+      payload: expect.any(Promise)
     });
   });
 });
