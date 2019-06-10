@@ -7,3 +7,8 @@ export function postNote(note) {
     body: JSON.stringify(note)
   });
 }
+
+export function getNotes() {
+  return fetch(`${process.env.API_URL}/api/v1/notes`)
+    .then(res => res.json());
+}
