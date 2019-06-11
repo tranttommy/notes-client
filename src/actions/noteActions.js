@@ -1,7 +1,14 @@
-import { postNote } from '../services/note-attendant-api';
+import { createAction } from 'promise-middleware-redux';
+import { postNote, getNotes } from '../services/note-attendant-api';
 
-export const ADD_NOTE = 'ADD_NOTE';
-export const addNote = note => ({
-  type: ADD_NOTE,
-  payload: postNote(note)
-});
+export const [
+  addNote,
+  ADD_NOTE,
+  ADD_NOTE_PENDING
+] = createAction('ADD_NOTE', postNote);
+
+export const [
+  setNotes,
+  SET_NOTES,
+  SET_NOTES_PENDING
+] = createAction('SET_NOTES', getNotes);

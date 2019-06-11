@@ -5,7 +5,8 @@ export function postNote(note) {
       'content-type': 'application/json'
     },
     body: JSON.stringify(note)
-  });
+  })
+    .then(res => res.json());
 }
 
 export function getNotes() {
